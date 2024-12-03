@@ -1,0 +1,23 @@
+{% extends "admin/change_form.html" %}
+
+{% block after_field_sets %}
+<div id="main-camera-container" style="display: none; max-width: 400px;">
+    <div id="photo-take">
+        <h4>Посмотрите на камеру:</h4>
+        <video id="camera-stream" width="300" autoplay></video>
+        <canvas id="snapshot" width="300" height="300" style="display:none;"></canvas>
+        <button type="button" id="capture-btn" style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #4CAF50; border: none; border-radius: 5px; cursor: pointer;">
+            Сделать фото
+        </button>
+
+    </div>
+    <!-- Display captured photo -->
+    <div id="photo-container" style="display: none;max-width: 400px;">
+        <h4>Результат:</h4>
+        <img id="captured-photo" width="300"  />
+        <button type="button" id="retake-btn" style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #FF6347; border: none; border-radius: 5px; cursor: pointer;">
+            Переснять
+        </button>
+    </div>
+</div>
+{% endblock %}
